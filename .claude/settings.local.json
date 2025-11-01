@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree -L 2 /Users/moritakousuke/Desktop/programming_practice/CSharp/CleanArchitect/src/ -d)",
+      "Bash(tree -L 2 /Users/moritakousuke/Desktop/programming_practice/CSharp/CleanArchitect/sample/src/ -d)",
+      "Bash(cat /Users/moritakousuke/Desktop/programming_practice/CSharp/CleanArchitect/Clean.Architecture.sln)",
+      "Bash(dotnet --version)",
+      "Bash(dotnet restore /Users/moritakousuke/Desktop/programming_practice/CSharp/CleanArchitect/Clean.Architecture.sln)",
+      "Bash(dotnet build /Users/moritakousuke/Desktop/programming_practice/CSharp/CleanArchitect/src/Clean.Architecture.Web/Clean.Architecture.Web.csproj)",
+      "Bash(dotnet ef database update --project ../Clean.Architecture.Infrastructure/Clean.Architecture.Infrastructure.csproj)",
+      "Bash(dotnet run)",
+      "Bash(lsof:*)",
+      "Bash(dotnet dev-certs:*)",
+      "Bash(tree:*)",
+      "WebSearch",
+      "Bash(brew search:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl:*)",
+      "Bash(tar:*)",
+      "Bash(~/.local/bin/netcoredbg/netcoredbg:*)",
+      "WebFetch(domain:guiferreira.me)",
+      "Bash(dotnet build:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
