@@ -22,7 +22,9 @@
       "Bash(dotnet build:*)",
       "Bash(git remote set-url:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd Cursor IDE debug configuration with netcoredbg\n\n- Configure netcoredbg for M1 Mac (arm64) debugging\n- Add debug launch configurations for both main and sample projects\n- Fix target framework: .NET 10.0 -> .NET 9.0 for compatibility\n- Update global.json to use .NET 9.0.301 SDK\n- Add development settings for local environment\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
