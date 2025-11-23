@@ -15,6 +15,10 @@ public class List(IMediator _mediator) : EndpointWithoutRequest<ContributorListR
   {
     Get("/Contributors");
     AllowAnonymous();
+    Summary(s => {
+      s.Summary = "List all Contributors";
+      s.Description = "List all contributors - returns a ContributorListResponse containing the Contributors.";
+    });
   }
 
   public override async Task HandleAsync(CancellationToken cancellationToken)

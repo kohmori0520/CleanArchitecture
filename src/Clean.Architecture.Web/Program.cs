@@ -38,6 +38,31 @@ builder.AddServiceDefaults();
 
 var app = builder.Build();
 
+// 🔍 デバッグ用: 重要なサービスが登録されているか確認
+Console.WriteLine("\n========== DIコンテナに登録されている重要なサービス ==========");
+
+// 直接サービスを取得して確認
+try
+{
+  var mediator = app.Services.GetService<IMediator>();
+  Console.WriteLine($"✅ IMediator: {(mediator != null ? mediator.GetType().Name : "NOT FOUND")}");
+
+  var dbContext = app.Services.GetService<Clean.Architecture.Infrastructure.Data.AppDbContext>();
+  Console.WriteLine($"✅ AppDbContext: {(dbContext != null ? dbContext.GetType().Name : "NOT FOUND")}");
+
+  var emailSender = app.Services.GetService<Clean.Architecture.Core.Interfaces.IEmailSender>();
+  Console.WriteLine($"✅ IEmailSender: {(emailSender != null ? emailSender.GetType().Name : "NOT FOUND")}");
+
+  Console.WriteLine("\n📝 これらのサービスは builder.Services.Add... で登録されています");
+  Console.WriteLine("   Endpointのコンストラクタに書くだけで自動的に注入されます！");
+}
+catch (Exception ex)
+{
+  Console.WriteLine($"❌ エラー: {ex.Message}");
+}
+
+Console.WriteLine("=============================================================\n");
+
 await app.UseAppMiddlewareAndSeedDatabase();
 
 app.Run();
